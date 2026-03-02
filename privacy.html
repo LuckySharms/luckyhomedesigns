@@ -9,6 +9,7 @@
       --bg: #FAFAF8;
       --text: #2C2C2C;
       --muted: #6B6B6B;
+      --accent: #7B8F6B;
       --border: #E4E0DB;
     }
 
@@ -23,7 +24,7 @@
     }
 
     .container {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -33,45 +34,51 @@
       border-bottom: 1px solid var(--border);
     }
 
-    header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
-    header p { color: var(--muted); font-size: 16px; }
-
-    main { padding: 40px 0; }
-
-    h2 {
-      font-size: 18px;
+    header h1 {
+      font-size: 28px;
       font-weight: 700;
-      margin: 32px 0 12px;
-      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
     }
 
-    h2:first-of-type { margin-top: 0; }
+    header p {
+      color: var(--muted);
+      font-size: 15px;
+    }
 
-    p, li {
-      font-size: 16px;
+    header a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    main { padding: 40px 0 20px; }
+
+    section { margin-bottom: 36px; }
+
+    section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 15px;
       color: var(--muted);
       margin-bottom: 12px;
     }
-
-    ul {
-      margin-left: 20px;
-      margin-bottom: 12px;
-    }
-
-    li { margin-bottom: 6px; }
-
-    a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { color: var(--text); }
 
     footer {
       border-top: 1px solid var(--border);
       padding: 32px 0;
       font-size: 14px;
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
   </style>
 </head>
@@ -79,107 +86,147 @@
   <div class="container">
     <header>
       <h1>Privacy Policy</h1>
-      <p>Lucky Home Designs — Last updated March 1, 2026</p>
+      <p>Lucky Home Designs &mdash; Last updated March 1, 2026</p>
+      <p><a href="/">&larr; Back to Home</a></p>
     </header>
 
     <main>
-      <h2>Overview</h2>
-      <p>
-        Lucky Home Designs ("the Application") is a personal content management tool
-        used to publish and manage pins on a single Pinterest Business account. The
-        Application is operated solely by the account owner and is not a multi-user
-        platform. It does not provide services to third parties, nor does it collect
-        personal information from external users.
-      </p>
+      <section>
+        <h2>Who We Are</h2>
+        <p>
+          Lucky Home Designs ("we," "us," "our") is a home organization content
+          brand that publishes curated product recommendations and visual
+          inspiration on Pinterest and our website at luckyhomedesigns.com. This
+          privacy policy explains how we collect, use, and protect information
+          in connection with our website and our use of third-party services
+          including the Pinterest API.
+        </p>
+      </section>
 
-      <h2>Data Accessed Through Pinterest</h2>
-      <p>
-        The Application connects to the Pinterest API (v5) using OAuth 2.0
-        authorization. Through this connection, the Application accesses the
-        following data belonging to the account owner:
-      </p>
-      <ul>
-        <li>Account profile information (username, account type)</li>
-        <li>Boards (names, descriptions, privacy settings)</li>
-        <li>Pins (titles, descriptions, images, destination links, analytics)</li>
-        <li>Pin-level and account-level analytics (impressions, saves, clicks)</li>
-      </ul>
-      <p>
-        This data is accessed solely to manage the account owner's own Pinterest
-        content. No data from other Pinterest users is accessed, collected, or stored.
-      </p>
+      <section>
+        <h2>Information We Collect</h2>
+        <p>
+          <strong>Website visitors:</strong> We do not use cookies, tracking
+          pixels, or analytics services on this website. We do not collect
+          personal information from visitors unless you voluntarily contact us
+          by email.
+        </p>
+        <p>
+          <strong>Pinterest account data:</strong> Our application connects to
+          Pinterest through their official API (v5) using OAuth 2.0
+          authorization. When authorized, we access our own Pinterest account
+          data including board information, pin content, and performance
+          analytics. We do not access, collect, or store data from any other
+          Pinterest user's account.
+        </p>
+        <p>
+          <strong>Email correspondence:</strong> If you contact us at
+          hello@luckyhomedesigns.com, we retain your message and email
+          address solely to respond to your inquiry.
+        </p>
+      </section>
 
-      <h2>Data Collection</h2>
-      <p>
-        The Application does not collect personal information from any visitors or
-        third parties. No cookies, tracking pixels, or analytics scripts are used on
-        this website. The only data processed by the Application is the account
-        owner's own Pinterest content and API credentials.
-      </p>
+      <section>
+        <h2>How We Use Pinterest Data</h2>
+        <p>
+          We use the Pinterest API exclusively to manage our own content — this
+          includes creating and publishing pins to our boards, organizing board
+          structures, and reviewing performance analytics to understand which
+          content resonates with our audience. All API activity is limited to
+          our own Pinterest business account.
+        </p>
+        <p>
+          We do not use Pinterest data to build user profiles, target
+          advertising, sell or share data with third parties, or collect
+          information about Pinterest users who interact with our pins.
+        </p>
+      </section>
 
-      <h2>Data Storage and Retention</h2>
-      <p>
-        API access tokens are stored securely on a private server controlled by the
-        account owner. These tokens are refreshed automatically per Pinterest's OAuth
-        2.0 specifications (30-day access token, 365-day refresh token) and are not
-        shared with any third party.
-      </p>
-      <p>
-        Content created through the Application (pin images, titles, descriptions)
-        is uploaded to Pinterest via the API and to a private content delivery network
-        (CDN) for image hosting. No Pinterest user data is cached or retained beyond
-        what is necessary for the Application's content management functions.
-      </p>
+      <section>
+        <h2>Data Storage and Security</h2>
+        <p>
+          Pinterest OAuth tokens are stored securely on a private server
+          infrastructure with restricted access. Access tokens are short-lived
+          (30-day expiry) and refresh tokens are rotated according to
+          Pinterest's recommended security practices. We do not store Pinterest
+          user data beyond what is necessary to publish and manage our own
+          content.
+        </p>
+        <p>
+          Our website is hosted on GitHub Pages with HTTPS encryption enabled
+          for all connections.
+        </p>
+      </section>
 
-      <h2>Third-Party Services</h2>
-      <p>
-        The Application interacts with the following third-party services in the
-        course of normal operation:
-      </p>
-      <ul>
-        <li><strong>Pinterest API (v5):</strong> Used to publish pins, manage boards,
-        and retrieve performance analytics for the account owner's content.</li>
-        <li><strong>DigitalOcean Spaces:</strong> Used for hosting pin images via a
-        private CDN. No personal data is stored on this service.</li>
-        <li><strong>Amazon Associates:</strong> Affiliate links within published pins
-        may direct to Amazon product pages. Amazon's own privacy policy governs
-        interactions on their platform.</li>
-      </ul>
-      <p>
-        No data obtained from the Pinterest API is shared with, sold to, or
-        disclosed to any third party, advertising service, or data broker.
-      </p>
+      <section>
+        <h2>Third-Party Services</h2>
+        <p>
+          Our content may include affiliate links to products on Amazon and
+          other retailers. When you click an affiliate link from one of our
+          pins, you leave our content and are subject to that retailer's own
+          privacy policy. We receive referral commissions through the Amazon
+          Associates program but do not receive personally identifiable
+          information about purchasers.
+        </p>
+        <p>
+          We use DigitalOcean for server infrastructure and image hosting. Their
+          privacy policy governs data processed on their platform.
+        </p>
+      </section>
 
-      <h2>Data Sharing</h2>
-      <p>
-        The Application does not sell, rent, trade, or otherwise share any data
-        with third parties. Data accessed through the Pinterest API is used
-        exclusively to manage the account owner's own content.
-      </p>
+      <section>
+        <h2>Data Retention</h2>
+        <p>
+          We retain Pinterest API tokens only for as long as needed to manage
+          our content publishing operations. Tokens are revoked and deleted if
+          our application is deauthorized or if we cease using the Pinterest
+          API. Email correspondence is retained for up to 12 months unless you
+          request earlier deletion.
+        </p>
+      </section>
 
-      <h2>Children's Privacy</h2>
-      <p>
-        The Application is not directed at children under the age of 13 and does
-        not knowingly collect information from children.
-      </p>
+      <section>
+        <h2>Your Rights</h2>
+        <p>
+          If you believe we hold any personal information about you, you may
+          request access to, correction of, or deletion of that information by
+          contacting us. Pinterest users can revoke our application's access
+          at any time through their Pinterest account settings, which
+          immediately terminates our ability to access any account data.
+        </p>
+      </section>
 
-      <h2>Changes to This Policy</h2>
-      <p>
-        This privacy policy may be updated from time to time. Any changes will be
-        reflected on this page with an updated revision date.
-      </p>
+      <section>
+        <h2>Children's Privacy</h2>
+        <p>
+          Our website and content are not directed at children under the age of
+          13. We do not knowingly collect personal information from children. If
+          we learn that we have inadvertently collected information from a child
+          under 13, we will delete it promptly.
+        </p>
+      </section>
 
-      <h2>Contact</h2>
-      <p>
-        For questions or concerns about this privacy policy or the Application's
-        data practices, please contact:
-      </p>
-      <p><a href="mailto:hello@luckyhomedesigns.com">hello@luckyhomedesigns.com</a></p>
+      <section>
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. Changes will be
+          posted on this page with a revised "last updated" date. Continued use
+          of our website or content after changes constitutes acceptance of the
+          updated policy.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          For privacy-related questions or requests, contact us at
+          <a href="mailto:hello@luckyhomedesigns.com" style="color: var(--accent); text-decoration: underline;">hello@luckyhomedesigns.com</a>.
+        </p>
+      </section>
     </main>
 
     <footer>
-      <span>&copy; 2026 Lucky Home Designs</span>
-      <a href="/">Home</a>
+      <span>&copy; 2026 Lucky Home Designs &mdash; <a href="/">Home</a></span>
     </footer>
   </div>
 </body>

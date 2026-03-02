@@ -3,190 +3,623 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucky Home Designs — Pinterest Content Manager</title>
+  <title>Lucky Home Designs — Home Organization Ideas &amp; Inspiration</title>
+  <meta name="description" content="Curated home organization ideas, product picks, and room-by-room inspiration for pantries, closets, kitchens, and small spaces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FAFAF8;
-      --text: #2C2C2C;
-      --muted: #6B6B6B;
-      --accent: #C8553D;
-      --border: #E4E0DB;
-      --card-bg: #FFFFFF;
+      --bg: #FAF9F6;
+      --text: #1A1A1A;
+      --muted: #6E6B65;
+      --sage: #8B9E7E;
+      --sage-dark: #6B7F5E;
+      --sage-light: #E8EDE4;
+      --warm: #C4A97D;
+      --warm-light: #F5F0E8;
+      --cream: #F5F2ED;
+      --border: #E0DCD5;
+      --white: #FFFFFF;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: 'Libre Franklin', sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.7;
+      font-weight: 300;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 680px;
+    h1, h2, h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a { color: var(--sage-dark); }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover { color: var(--white); }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 540px;
+      max-height: 800px;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26,26,26,0.40) 0%,
+        rgba(26,26,26,0.30) 40%,
+        rgba(26,26,26,0.65) 100%
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 80px;
+      left: 48px;
+      right: 48px;
+      max-width: 640px;
+      color: var(--white);
+      z-index: 2;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      max-width: 480px;
+      font-weight: 300;
+    }
+
+    /* ── Intro Strip ── */
+    .intro-strip {
+      background: var(--cream);
+      padding: 56px 48px;
+      text-align: center;
+    }
+
+    .intro-strip p {
+      max-width: 620px;
       margin: 0 auto;
-      padding: 0 24px;
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    header {
-      padding: 48px 0 40px;
-      border-bottom: 1px solid var(--border);
+    /* ── Category Grid ── */
+    .categories {
+      padding: 72px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+    .categories .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .categories .section-header h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .categories .section-header p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+
+    .cat-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      cursor: pointer;
+    }
+
+    .cat-card.featured {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .cat-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(26,26,26,0.55) 0%,
+        rgba(26,26,26,0.0) 50%
+      );
+      transition: background 0.3s;
+    }
+
+    .cat-card:hover::after {
+      background: linear-gradient(
+        to top,
+        rgba(26,26,26,0.65) 0%,
+        rgba(26,26,26,0.05) 50%
+      );
+    }
+
+    .cat-card .card-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      z-index: 2;
+      color: var(--white);
+    }
+
+    .cat-card .card-label h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .cat-card .card-label span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+    }
+
+    @media (max-width: 768px) {
+      .cat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cat-card.featured {
+        grid-column: span 2;
+        grid-row: span 1;
+        aspect-ratio: 16/9;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .cat-grid { grid-template-columns: 1fr; }
+      .cat-card.featured {
+        grid-column: span 1;
+        aspect-ratio: 4/5;
+      }
+    }
+
+    /* ── Featured Picks Strip ── */
+    .picks {
+      background: var(--sage-light);
+      padding: 72px 48px;
+    }
+
+    .picks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .picks-text h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .picks-text p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .picks-text .cta {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--sage-dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .picks-text .cta:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    .picks-image {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    @media (max-width: 768px) {
+      .picks-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* ── Pinterest Banner ── */
+    .pinterest-banner {
+      padding: 72px 48px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pinterest-banner h2 {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .pinterest-banner p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .pinterest-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #E60023;
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: background 0.2s;
+    }
+
+    .pinterest-btn:hover { background: #cc001f; }
+
+    .pinterest-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.6);
+      padding: 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: rgba(255,255,255,0.9);
       margin-bottom: 8px;
     }
 
-    header p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    main {
-      padding: 40px 0;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    section p {
-      font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .features {
-      display: grid;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .feature {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px 24px;
-    }
-
-    .feature strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    .feature span {
+    .footer-brand p {
       font-size: 14px;
-      color: var(--muted);
+      line-height: 1.6;
+      max-width: 300px;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
-      font-size: 14px;
-      color: var(--muted);
+    .footer-links {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
+      gap: 48px;
     }
 
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    .footer-col h4 {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
     }
 
-    footer a:hover { color: var(--text); }
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── Mobile nav ── */
+    @media (max-width: 640px) {
+      nav { padding: 16px 24px; }
+      nav .nav-links { gap: 20px; }
+      nav .nav-links a { font-size: 11px; letter-spacing: 1px; }
+      .hero-content { left: 24px; right: 24px; bottom: 48px; }
+      .intro-strip, .categories, .picks, .pinterest-banner { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 36px 24px; }
+      .footer-links { gap: 32px; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Lucky Home Designs</h1>
-      <p>A personal content manager for Pinterest</p>
-    </header>
 
-    <main>
-      <section>
-        <h2>About</h2>
-        <p>
-          Lucky Home Designs is a personal content management application that helps
-          organize, schedule, and publish Pinterest pins for the home organization
-          niche. It connects to a single Pinterest Business account through the
-          official Pinterest API (v5) using OAuth 2.0 authorization.
-        </p>
-        <p>
-          This is a single-user tool, built and operated by the account owner to
-          manage their own content. It is not a multi-user platform and does not
-          provide services to third parties.
-        </p>
-      </section>
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="logo">Lucky Home Designs</a>
+    <ul class="nav-links">
+      <li><a href="#categories">Ideas</a></li>
+      <li><a href="#picks">Picks</a></li>
+      <li><a href="#pinterest">Pinterest</a></li>
+      <li><a href="mailto:hello@luckyhomedesigns.com">Contact</a></li>
+    </ul>
+  </nav>
 
-      <section>
-        <h2>Features</h2>
-        <div class="features">
-          <div class="feature">
-            <strong>Content Publishing</strong>
-            <span>Create and publish pins with images, titles, descriptions, and
-            destination links to the appropriate boards.</span>
-          </div>
-          <div class="feature">
-            <strong>Board Management</strong>
-            <span>Organize pins across themed boards such as pantry organization,
-            closet storage, and small-space solutions.</span>
-          </div>
-          <div class="feature">
-            <strong>Performance Tracking</strong>
-            <span>Review pin analytics — impressions, saves, and click-through
-            rates — to understand what content resonates.</span>
-          </div>
-          <div class="feature">
-            <strong>Content Planning</strong>
-            <span>Research trending topics and plan upcoming pin ideas with keyword
-            insights and seasonal content calendars.</span>
-          </div>
-        </div>
-      </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-img">
+      <img
+        src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1600&q=80&auto=format"
+        alt="Beautifully organized open kitchen shelving with ceramic jars and plants"
+        loading="eager"
+      >
+    </div>
+    <div class="hero-content">
+      <div class="hero-label">Home Organization &amp; Inspiration</div>
+      <h1>A place for everything,<br>beautifully arranged</h1>
+      <p>Curated ideas, affordable product picks, and visual inspiration to help you organize every room in your home.</p>
+    </div>
+  </section>
 
-      <section>
-        <h2>Pinterest API Usage</h2>
-        <p>
-          This application accesses the Pinterest API v5 with the following scopes:
-          <strong>pins:read</strong>, <strong>pins:write</strong>,
-          <strong>boards:read</strong>, <strong>boards:write</strong>, and
-          <strong>user_accounts:read</strong>. All API access is authorized through
-          Pinterest's standard OAuth 2.0 flow and is limited to the account owner's
-          own data.
-        </p>
-      </section>
-
-      <section>
-        <h2>Contact</h2>
-        <p>
-          For questions about this application, contact
-          <a href="mailto:hello@luckyhomedesigns.com">hello@luckyhomedesigns.com</a>.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <span>&copy; 2026 Lucky Home Designs</span>
-      <a href="/privacy">Privacy Policy</a>
-    </footer>
+  <!-- Intro -->
+  <div class="intro-strip">
+    <p>
+      We believe an organized home doesn't have to be expensive or complicated.
+      Lucky Home Designs shares practical, budget-friendly solutions — from
+      a $12 pantry bin that changes everything to full closet makeover guides
+      — so you can create calm, functional spaces you actually love living in.
+    </p>
   </div>
+
+  <!-- Categories -->
+  <section class="categories" id="categories">
+    <div class="section-header">
+      <h2>Room by Room</h2>
+      <p>Browse ideas by space — each with product picks, layouts, and visual guides.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card featured">
+        <img
+          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format"
+          alt="Organized pantry with clear containers and labeled jars"
+          loading="lazy"
+        >
+        <div class="card-label">
+          <h3>Pantry Organization</h3>
+          <span>Clear bins, labels, shelf risers &amp; smart layouts</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img
+          src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=600&q=80&auto=format"
+          alt="Neatly organized closet with wooden hangers and folded linens"
+          loading="lazy"
+        >
+        <div class="card-label">
+          <h3>Closet &amp; Wardrobe</h3>
+          <span>Hangers, dividers &amp; seasonal systems</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img
+          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format"
+          alt="Clean bathroom vanity with organized storage containers"
+          loading="lazy"
+        >
+        <div class="card-label">
+          <h3>Bathroom &amp; Linen</h3>
+          <span>Vanity trays, towel storage &amp; linen folds</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img
+          src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80&auto=format"
+          alt="Organized kitchen drawer with utensil dividers"
+          loading="lazy"
+        >
+        <div class="card-label">
+          <h3>Kitchen Storage</h3>
+          <span>Cabinets, drawers &amp; countertop solutions</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img
+          src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80&auto=format"
+          alt="Minimalist small space with smart vertical storage"
+          loading="lazy"
+        >
+        <div class="card-label">
+          <h3>Small Spaces</h3>
+          <span>Vertical storage &amp; apartment-friendly ideas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Picks -->
+  <section class="picks" id="picks">
+    <div class="picks-inner">
+      <div class="picks-text">
+        <h2>Budget-Friendly Finds</h2>
+        <p>
+          Every product we recommend is something we'd actually use. We focus on
+          items under $25 from trusted retailers — organization essentials that
+          look great, work well, and don't require a renovation budget.
+        </p>
+        <p>
+          From stackable bins to bamboo drawer dividers, we test and curate so
+          you don't have to scroll through thousands of options.
+        </p>
+        <a href="#pinterest" class="cta">See our latest picks on Pinterest →</a>
+      </div>
+      <div class="picks-image">
+        <img
+          src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&q=80&auto=format"
+          alt="Organized shelf with woven baskets and glass containers"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Pinterest Banner -->
+  <section class="pinterest-banner" id="pinterest">
+    <h2>Follow Us on Pinterest</h2>
+    <p>
+      We publish new organization ideas, product roundups, and room
+      transformations every week. Follow our boards for fresh inspiration
+      delivered straight to your feed.
+    </p>
+    <a href="https://www.pinterest.com/HouseHeatingParty/" class="pinterest-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      Follow Lucky Home Designs
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Lucky Home Designs</div>
+        <p>Curated home organization ideas and affordable product picks for every room.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#categories">Organization Ideas</a></li>
+            <li><a href="#picks">Product Picks</a></li>
+            <li><a href="#pinterest">Pinterest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="mailto:hello@luckyhomedesigns.com">Contact Us</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Lucky Home Designs. All rights reserved.
+    </div>
+  </footer>
+
 </body>
 </html>
